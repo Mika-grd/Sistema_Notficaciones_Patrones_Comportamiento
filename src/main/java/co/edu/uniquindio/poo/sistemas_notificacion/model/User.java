@@ -4,16 +4,17 @@ import java.util.LinkedList;
 
 public abstract class User {
 
-    private String nombre, email;
+    private String nombre, email, telefono;
     private Template template;
     private NotificationStrategy preferredStrategy;
     private LinkedList<EventManager> suscripciones;
 
 
 
-    public User(String nombre, String email, Template template, NotificationStrategy preferredStrategy) {
+    public User(String nombre, String email, String telefono, Template template, NotificationStrategy preferredStrategy) {
         this.nombre = nombre;
         this.email = email;
+        this.telefono = telefono;
         this.template = template;
         this.preferredStrategy = preferredStrategy;
         this.suscripciones = new LinkedList<>();
@@ -60,6 +61,13 @@ public abstract class User {
     }
 
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
     public void agregarSuscripcion(EventManager suscripcionConreta){
         suscripcionConreta.añadirSuscriptor(this);

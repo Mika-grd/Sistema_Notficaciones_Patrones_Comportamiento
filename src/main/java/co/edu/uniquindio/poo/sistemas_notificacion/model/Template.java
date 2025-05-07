@@ -2,16 +2,14 @@ package co.edu.uniquindio.poo.sistemas_notificacion.model;
 
 public abstract class Template {
 
-    private User usuario;
-    private String nombre;
 
-    public Template(User usuario) {
-        this.usuario = usuario;
-        this.nombre = usuario.getNombre();
+    public Template() {
     }
 
-    void formatMessage() {};
+    public final String formatMessage(User usuario ,String mensajeBase) {
+        return generarEncabezado(usuario) + "\n" + mensajeBase + "\n" + generarPie(usuario);
+    }
 
-    private void generarEncabezado() {};
-    private void generarMensaje() {};
+    protected abstract String generarEncabezado(User usuario);
+    protected abstract String generarPie(User usuario);
 }
