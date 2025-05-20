@@ -22,4 +22,9 @@ public class EventoSeguridad extends EventManager {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Evento de Seguridad";
+    }
+
 }

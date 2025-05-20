@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController."
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController.CrearNotificacionViewController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
 
-</AnchorPane>
+    <Label text="Crear Notificación"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Evento:" minWidth="70"/>
+        <ComboBox fx:id="comboEventos" layoutX="20.0" layoutY="380.0" prefWidth="250" promptText="Seleccione un evento">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Promocion"/>
+                    <String fx:value="Seguridad"/>
+                    <String fx:value="Informacion"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Mensaje:" minWidth="70" />
+        <TextField fx:id="campoMensaje" prefWidth="250" promptText="Escriba el mensaje aquí"/>
+    </HBox>
+
+    <Button fx:id="btnEnviar" text="Enviar Notificación" onAction="#onEnviarNotificacion"/>
+</VBox>

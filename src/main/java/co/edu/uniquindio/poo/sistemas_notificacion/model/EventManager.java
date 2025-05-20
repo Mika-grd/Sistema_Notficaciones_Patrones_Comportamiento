@@ -8,13 +8,12 @@ public abstract class EventManager {
     private String mensajeEvento;
     private String tipoEvento;
 
-
     public EventManager() {
         this.mensajeEvento = "";
     }
 
-    public void añadirSuscriptor(User suscriptor) {}
-    public void eliminarSuscriptor(User suscriptor) {}
+    public abstract void añadirSuscriptor(User suscriptor);
+    public abstract void eliminarSuscriptor(User suscriptor);
 
     public LinkedList<User> getSuscriptores() {
         return suscriptores;
@@ -38,5 +37,10 @@ public abstract class EventManager {
 
     public void setTipoEvento(String tipoEvento) {
         this.tipoEvento = tipoEvento;
+    }
+
+    @Override
+    public String toString() {
+        return tipoEvento != null ? tipoEvento : "Evento sin nombre";
     }
 }

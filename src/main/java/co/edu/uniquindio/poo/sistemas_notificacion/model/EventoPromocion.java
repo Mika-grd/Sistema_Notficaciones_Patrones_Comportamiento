@@ -21,4 +21,9 @@ public class EventoPromocion extends EventManager {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Evento de Promocion";
+    }
+
 }

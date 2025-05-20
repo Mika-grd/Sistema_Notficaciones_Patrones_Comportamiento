@@ -21,4 +21,9 @@ public class EventoInformacion extends EventManager {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Evento de Informacion";
+    }
+
 }
