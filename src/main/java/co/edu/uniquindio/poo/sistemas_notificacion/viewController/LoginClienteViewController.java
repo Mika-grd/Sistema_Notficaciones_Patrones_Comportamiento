@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.interfacesgraficassistemanoti.viewController;
+package co.edu.uniquindio.poo.sistemas_notificacion.viewController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
