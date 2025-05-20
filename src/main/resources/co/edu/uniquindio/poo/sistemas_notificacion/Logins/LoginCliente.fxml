@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController.LoginClienteViewController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController.LoginClienteViewController">
 
     <children>
 
@@ -19,10 +20,10 @@
 
         <PasswordField fx:id="passwordField" layoutX="150.0" layoutY="135.0" prefWidth="180.0" />
 
-        <Button layoutX="280.0" layoutY="249.0" onAction="#onLoginClick" prefWidth="100.0" text="Iniciar Sesión" />
+        <Button fx:id="loginBoton" layoutX="280.0" layoutY="249.0" onAction="#onLoginClick" prefWidth="100.0" text="Iniciar Sesión" />
 
         <Label fx:id="errorLabel" layoutX="100.0" layoutY="240.0" text="Error" textFill="red" visible="false" />
-      <Button layoutX="20.0" layoutY="249.0" onAction="#onVolverClick" prefWidth="100.0" text="Volver" />
+      <Button fx:id="volverBoton" layoutX="20.0" layoutY="249.0" onAction="#onVolverClick" prefWidth="100.0" text="Volver" />
 
     </children>
 </AnchorPane>
