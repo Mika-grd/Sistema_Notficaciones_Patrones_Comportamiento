@@ -86,8 +86,6 @@ public class ClienteEmailViewController {
     }
 
     private java.util.List<Notificacion> obtenerNotificacionesCliente(Cliente cliente) {
-        // Aquí deberías retornar las notificaciones reales de tu cliente,
-        // por ahora retorna lista vacía para que compiles.
         return new java.util.ArrayList<>();
     }
 

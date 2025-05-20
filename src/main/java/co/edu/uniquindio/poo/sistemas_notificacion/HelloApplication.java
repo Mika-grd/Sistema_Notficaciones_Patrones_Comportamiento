@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.sistemas_notificacion;
 
+import co.edu.uniquindio.poo.sistemas_notificacion.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,27 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+
+        Sesion sesion = Sesion.getInstance();
+
+        SistemaNotificaciones sistemaNotificaciones = SistemaNotificaciones.getInstance();
+
+        Invitado invitado = Sesion.getInstance().getInvitado();
+
+        invitado.agregarSuscripcion(sistemaNotificaciones.getEventoPromocion());
+
+        sistemaNotificaciones.añadir(invitado, true);
+
+        sistemaNotificaciones.generarMensajeBase(sistemaNotificaciones.getEventoPromocion(), "Promocion Disponible!");
+
+        sistemaNotificaciones.generarNotificaciones(sistemaNotificaciones.getEventoPromocion());
+
+
+
+
         launch();
     }
+
+
+
 }

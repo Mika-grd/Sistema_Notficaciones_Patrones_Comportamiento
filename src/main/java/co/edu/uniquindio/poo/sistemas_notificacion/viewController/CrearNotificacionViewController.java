@@ -19,7 +19,7 @@ public class CrearNotificacionViewController {
 
     private final ObservableList<EventManager> listaEventos = FXCollections.observableArrayList();
 
-    private final SistemaNotificaciones sistemaNotificaciones = new SistemaNotificaciones();
+    SistemaNotificaciones sistemaNotificaciones = SistemaNotificaciones.getInstance();
 
     @FXML
     public void initialize() {

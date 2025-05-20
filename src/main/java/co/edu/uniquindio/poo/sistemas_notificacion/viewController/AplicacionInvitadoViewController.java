@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.poo.sistemas_notificacion.model.Notificacion;
 import co.edu.uniquindio.poo.sistemas_notificacion.model.Sesion;
+import co.edu.uniquindio.poo.sistemas_notificacion.model.SistemaNotificaciones;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,10 +54,13 @@ public class AplicacionInvitadoViewController {
     @FXML
     void initialize() {
 
+
+
         var primeraNotificacion = sesion.getUsuario().getNotificaciones().peekFirst();
         if (primeraNotificacion != null && primeraNotificacion.getMensaje() != null) {
             cuadroPush.setText(primeraNotificacion.getMensaje());
         }
+
 
         assert btnCerrarSesion != null : "fx:id=\"btnCerrarSesion\" was not injected: check your FXML file 'AplicacionInvitado.fxml'.";
         assert cuadroPush != null : "fx:id=\"cuadroPush\" was not injected: check your FXML file 'AplicacionInvitado.fxml'.";

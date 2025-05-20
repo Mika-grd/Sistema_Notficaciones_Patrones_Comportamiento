@@ -22,9 +22,9 @@ public class EnviarNotificacionCommand implements ComandoNotificacion {
         cadenaValidacion.handle(notificacion);
 
 
-
-        // Simular envío
         User usuario = notificacion.getUsuario();
         usuario.getNotificaciones().add(notificacion);
+
+
     }
 }

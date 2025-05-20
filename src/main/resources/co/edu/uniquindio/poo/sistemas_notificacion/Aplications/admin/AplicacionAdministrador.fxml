@@ -19,9 +19,7 @@
 
         <Button fx:id="btnGestionEventos" layoutX="75.0" layoutY="170.0" onAction="#onGestionEventosClick" prefWidth="150.0" text="Gestionar Eventos" />
 
-        <Button fx:id="btnRegistrarEventos" layoutX="75.0" layoutY="220.0" onAction="#onRegistrarEventosClick" prefWidth="150.0" text="Registrar Eventos" />
-
-        <Button fx:id="btnCrearNotificacion" layoutX="75.0" layoutY="270.0" onAction="#onCrearNotificacionClick" prefWidth="150.0" text="Crear Notificación" />
+        <Button fx:id="btnCrearNotificacion" layoutX="75.0" layoutY="220.0" onAction="#onCrearNotificacionClick" prefWidth="150.0" text="Crear Notificación" />
 
 
         <ImageView fx:id="iconoSms" fitHeight="60.0" fitWidth="80.0" layoutX="184.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">

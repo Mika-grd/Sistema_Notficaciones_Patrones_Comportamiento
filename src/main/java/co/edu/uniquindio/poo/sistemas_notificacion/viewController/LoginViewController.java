@@ -69,10 +69,7 @@ public class LoginViewController {
     void onGuestAccess(ActionEvent event) {
         Sesion sesion = Sesion.getInstance();
 
-        InvitadoTemplate InvitadoTemplate = sesion.getInvitadoTemplate();
-        StrategySMS smsGuess = new StrategySMS();
-        Invitado invitado = new Invitado("Invitado", "No@email", "No phone", InvitadoTemplate, smsGuess);
-        sesion.setUsuario(invitado);
+        sesion.setUsuario(Sesion.getInstance().getInvitado());
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/invitado/AplicacionInvitado.fxml"));

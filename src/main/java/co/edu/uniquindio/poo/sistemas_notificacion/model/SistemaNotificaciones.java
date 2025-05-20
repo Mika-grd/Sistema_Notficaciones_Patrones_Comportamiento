@@ -7,10 +7,16 @@ public class SistemaNotificaciones {
     private LinkedList<Notificacion> notificaciones;
     private LinkedList<User> usuarios;
     private static SistemaNotificaciones instance;
+    private EventoInformacion eventoInformacion;
+    private EventoPromocion eventoPromocion;
+    private EventoSeguridad eventoSeguridad;
 
     private SistemaNotificaciones() {
         notificaciones = new LinkedList<>();
         usuarios = new LinkedList<>();
+        eventoInformacion = new EventoInformacion();
+        eventoPromocion = new EventoPromocion();
+        eventoSeguridad = new EventoSeguridad();
     }
 
     public static  SistemaNotificaciones getInstance() {
@@ -73,6 +79,7 @@ public class SistemaNotificaciones {
         for (User suscriptor : evento.getSuscriptores()){
             String mensajeFinal = generarNotificacion(suscriptor, evento);
 
+
             Notificacion notificacion = new Notificacion(suscriptor, mensajeFinal);
             ComandoNotificacion comando = new EnviarNotificacionCommand(notificacion);
 
@@ -82,5 +89,26 @@ public class SistemaNotificaciones {
                 System.out.println("Error al enviar notificación a " + suscriptor.getNombre() + ": " + e.getMessage());
             }
         }
+    }
+
+
+    public LinkedList<Notificacion> getNotificaciones() {
+        return notificaciones;
+    }
+
+    public LinkedList<User> getUsuarios() {
+        return usuarios;
+    }
+
+    public EventoInformacion getEventoInformacion() {
+        return eventoInformacion;
+    }
+
+    public EventoPromocion getEventoPromocion() {
+        return eventoPromocion;
+    }
+
+    public EventoSeguridad getEventoSeguridad() {
+        return eventoSeguridad;
     }
 }
