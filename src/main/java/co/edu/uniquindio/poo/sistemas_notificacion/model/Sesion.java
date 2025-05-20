@@ -4,8 +4,14 @@ public class Sesion {
 
     private User usuario;
     private static Sesion instance;
+    private final InvitadoTemplate invitadoTemplate;
+    private final AdminTemplate adminTemplate;
+    private final ClinteTemplate clienteTemplate;
 
     private Sesion() {
+        this.invitadoTemplate = new InvitadoTemplate();
+        this.adminTemplate = new AdminTemplate();
+        this.clienteTemplate = new ClinteTemplate();
     }
 
     public static Sesion getInstance() {
@@ -26,5 +32,17 @@ public class Sesion {
 
     public void setUsuario(User usuario) {
         this.usuario = usuario;
+    }
+
+    public InvitadoTemplate getInvitadoTemplate() {
+        return invitadoTemplate;
+    }
+
+    public AdminTemplate getAdminTemplate() {
+        return adminTemplate;
+    }
+
+    public ClinteTemplate getClienteTemplate() {
+        return clienteTemplate;
     }
 }

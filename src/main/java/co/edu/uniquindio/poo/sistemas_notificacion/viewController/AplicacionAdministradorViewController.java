@@ -102,6 +102,20 @@ public class AplicacionAdministradorViewController {
     @FXML
     void onEmailClick(ActionEvent event) {
 
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/cliente/ClienteEmail.fxml"));
+            Scene newScene = new Scene(loader.load());
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            currentStage.setScene(newScene);
+            currentStage.setTitle("Email");
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar la nueva ventana: " + e.getMessage());
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
@@ -143,6 +157,20 @@ public class AplicacionAdministradorViewController {
 
     @FXML
     void onSMSClick(ActionEvent event) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/cliente/ClienteSMS.fxml"));
+            Scene newScene = new Scene(loader.load());
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            currentStage.setScene(newScene);
+            currentStage.setTitle("SMS");
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar la nueva ventana: " + e.getMessage());
+            e.printStackTrace();
+        }
 
     }
 

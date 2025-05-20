@@ -3,6 +3,8 @@ package co.edu.uniquindio.poo.sistemas_notificacion.viewController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.sistemas_notificacion.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,14 +67,21 @@ public class LoginViewController {
 
     @FXML
     void onGuestAccess(ActionEvent event) {
+        Sesion sesion = Sesion.getInstance();
+
+        InvitadoTemplate InvitadoTemplate = sesion.getInvitadoTemplate();
+        StrategySMS smsGuess = new StrategySMS();
+        Invitado invitado = new Invitado("Invitado", "No@email", "No phone", InvitadoTemplate, smsGuess);
+        sesion.setUsuario(invitado);
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Logins/LoginInvitado.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/invitado/AplicacionInvitado.fxml"));
             Scene newScene = new Scene(loader.load());
 
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             currentStage.setScene(newScene);
-            currentStage.setTitle("Login invitado");
+            currentStage.setTitle("Invitado");
 
         } catch (IOException e) {
             System.out.println("Error al cargar la nueva ventana: " + e.getMessage());

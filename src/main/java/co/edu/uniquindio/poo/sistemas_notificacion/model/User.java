@@ -8,6 +8,7 @@ public abstract class User {
     private Template template;
     private NotificationStrategy preferredStrategy;
     private LinkedList<EventManager> suscripciones;
+    private LinkedList<Notificacion> notificaciones;
     private boolean estaBloqueado = false;
 
 
@@ -19,6 +20,7 @@ public abstract class User {
         this.template = template;
         this.preferredStrategy = preferredStrategy;
         this.suscripciones = new LinkedList<>();
+        this.notificaciones = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -61,6 +63,9 @@ public abstract class User {
         this.suscripciones = suscripciones;
     }
 
+    public LinkedList<Notificacion> getNotificaciones() {
+        return notificaciones;
+    }
 
     public String getTelefono() {
         return telefono;

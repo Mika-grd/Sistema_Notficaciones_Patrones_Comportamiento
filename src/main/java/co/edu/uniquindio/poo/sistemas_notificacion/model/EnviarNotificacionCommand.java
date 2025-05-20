@@ -12,15 +12,19 @@ public class EnviarNotificacionCommand implements ComandoNotificacion {
         ValidarUsuarioBloqueadoHandler validarUsuario = new ValidarUsuarioBloqueadoHandler();
         validarMensaje.setNext(validarUsuario);
         this.cadenaValidacion = validarMensaje;
+
+
     }
 
     @Override
     public void ejecutar() throws Exception {
-        // Validación
+
         cadenaValidacion.handle(notificacion);
 
+
+
         // Simular envío
-        System.out.println("Enviando notificación a " + notificacion.getUsuario().getNombre());
-        System.out.println("Mensaje:\n" + notificacion.getMensaje());
+        User usuario = notificacion.getUsuario();
+        usuario.getNotificaciones().add(notificacion);
     }
 }
