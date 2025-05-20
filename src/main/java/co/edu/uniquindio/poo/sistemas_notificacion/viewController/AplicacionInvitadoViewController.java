@@ -1,39 +1,69 @@
 package co.edu.uniquindio.poo.sistemas_notificacion.viewController;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.sistemas_notificacion.model.Sesion;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import javafx.scene.Node;
 
 public class AplicacionInvitadoViewController {
 
     @FXML
-    private TextArea cuadroPush;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
 
     @FXML
     private Button btnCerrarSesion;
 
-    public void mostrarNotificacionPush(String mensaje) {
-        if (mensaje != null && !mensaje.isBlank()) {
-            cuadroPush.appendText(mensaje + "\n\n");
+    @FXML
+    private TextArea cuadroPush;
+
+    Sesion sesion = Sesion.getInstance();
+
+    @FXML
+    public void onCerrarSesionClick(ActionEvent event) {
+        sesion.setUsuario(null);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Logins/Login.fxml"));
+            Scene newScene = new Scene(loader.load());
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            currentStage.setScene(newScene);
+            currentStage.setTitle("Login");
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar la nueva ventana: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     @FXML
-    public void onCerrarSesionClick(ActionEvent event) {
-        Alert alerta = new Alert(AlertType.INFORMATION);
-        alerta.setTitle("Sesión Cerrada");
-        alerta.setHeaderText(null);
-        alerta.setContentText("Has cerrado sesión como invitado.");
-        alerta.showAndWait();
+    void initialize() {
 
-        // Cierra la ventana actual
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+        var primeraNotificacion = sesion.getUsuario().getNotificaciones().peekFirst();
+        if (primeraNotificacion != null && primeraNotificacion.getMensaje() != null) {
+            cuadroPush.setText(primeraNotificacion.getMensaje());
+        }
+
+        assert btnCerrarSesion != null : "fx:id=\"btnCerrarSesion\" was not injected: check your FXML file 'AplicacionInvitado.fxml'.";
+        assert cuadroPush != null : "fx:id=\"cuadroPush\" was not injected: check your FXML file 'AplicacionInvitado.fxml'.";
 
     }
+
 }
+
+
+
+
