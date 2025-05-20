@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.interfacesgraficassistemanoti.viewController.AplicacionClienteViewController">
+
+    <children>
+
+        <TextArea fx:id="cuadroPush" editable="false" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="260.0" promptText="Aquí aparecerán las notificaciones push" wrapText="true" />
+
+        <Button fx:id="btnGestionarSuscripciones" layoutX="75.0" layoutY="220.0" onAction="#onGestionarClick" prefWidth="150.0" text="Gestionar Suscripciones" />
+
+        <Button fx:id="btnCerrarSesion" layoutX="100.0" layoutY="440.0" onAction="#onCerrarSesionClick" prefWidth="100.0" text="Cerrar Sesión" />
+      <ImageView fx:id="iconoSms" fitHeight="60.0" fitWidth="80.0" layoutX="184.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../smspng.png" />
+         </image>
+      </ImageView>
+         <Label fx:id="contadorSms" layoutX="210.0" layoutY="281.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="281.0" />
+      <ImageView fx:id="iconoEmail" fitHeight="60.0" fitWidth="80.0" layoutX="61.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../emailpng.png" />
+         </image>
+      </ImageView>
+         <Label fx:id="contadorEmail" layoutX="87.0" layoutY="281.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="281.0" />
+      <Button layoutX="52.0" layoutY="348.0" mnemonicParsing="false" onAction="#onEmailClick" text="Ver Email" textAlignment="JUSTIFY" />
+      <Button layoutX="181.0" layoutY="348.0" mnemonicParsing="false" onAction="#onSMSClick" text="Ver SMS" textAlignment="JUSTIFY" />
+
+    </children>
+</AnchorPane>
