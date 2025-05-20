@@ -8,6 +8,7 @@ public abstract class User {
     private Template template;
     private NotificationStrategy preferredStrategy;
     private LinkedList<EventManager> suscripciones;
+    private boolean estaBloqueado = false;
 
 
 
@@ -67,6 +68,14 @@ public abstract class User {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public boolean isEstaBloqueado() {
+        return estaBloqueado;
+    }
+
+    public void setEstaBloqueado(boolean estaBloqueado) {
+        this.estaBloqueado = estaBloqueado;
     }
 
     public void agregarSuscripcion(EventManager suscripcionConreta){

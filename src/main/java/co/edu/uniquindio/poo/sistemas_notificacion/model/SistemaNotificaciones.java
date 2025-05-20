@@ -18,9 +18,16 @@ public class SistemaNotificaciones {
 
     public void generarNotificaciones(EventManager evento){
         for (User suscriptor : evento.getSuscriptores()){
-            generarNotificacion(suscriptor, evento);
+            String mensajeFinal = generarNotificacion(suscriptor, evento);
+
+            Notificacion notificacion = new Notificacion(suscriptor, mensajeFinal);
+            ComandoNotificacion comando = new EnviarNotificacionCommand(notificacion);
+
+            try {
+                comando.ejecutar();
+            } catch (Exception e) {
+                System.out.println("Error al enviar notificación a " + suscriptor.getNombre() + ": " + e.getMessage());
+            }
         }
     }
-
-
 }
