@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController.AplicacionAdministradorViewController">
+<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.sistemas_notificacion.viewController.AplicacionAdministradorViewController">
 
     <children>
 
 
-        <TextArea fx:id="cuadroPush" editable="false" layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="260.0" promptText="Aquí aparecerán las notificaciones push" wrapText="true" />
+        <TextArea fx:id="cuadroPush" editable="false" layoutX="20.0" layoutY="20.0"
+                  prefHeight="80.0" prefWidth="260.0"
+                  promptText="Aquí aparecerán las notificaciones push" wrapText="true" />
 
 
-        <Button fx:id="btnGestionClientes" layoutX="75.0" layoutY="120.0" onAction="#onGestionClientesClick" prefWidth="150.0" text="Gestionar Clientes" />
+        <Button fx:id="btnGestionClientes" layoutX="75.0" layoutY="120.0"
+                onAction="#onGestionClientesClick" prefWidth="150.0" text="Gestionar Clientes" />
 
-        <Button fx:id="btnGestionEventos" layoutX="75.0" layoutY="196.0" onAction="#onGestionEventosClick" prefWidth="150.0" text="Registrar Eventos" />
+        <Button fx:id="btnGestionEventos" layoutX="75.0" layoutY="170.0"
+                onAction="#onGestionEventosClick" prefWidth="150.0" text="Gestionar Eventos" />
 
-        <Button fx:id="btnCrearNotificacion" layoutX="75.0" layoutY="270.0" onAction="#onCrearNotificacionClick" prefWidth="150.0" text="Crear Notificación" />
+        <Button fx:id="btnRegistrarEventos" layoutX="75.0" layoutY="220.0"
+                onAction="#onRegistrarEventosClick" prefWidth="150.0" text="Registrar Eventos" />
+
+        <Button fx:id="btnCrearNotificacion" layoutX="75.0" layoutY="270.0"
+                onAction="#onCrearNotificacionClick" prefWidth="150.0" text="Crear Notificación" />
 
 
-        <ImageView fx:id="iconoSms" fitHeight="60.0" fitWidth="80.0" layoutX="184.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="iconoSms" fitHeight="60.0" fitWidth="80.0" layoutX="184.0" layoutY="330.0"
+                   pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../smspng.png" />
             </image>
         </ImageView>
-        <Label fx:id="contadorSms" layoutX="210.0" layoutY="330.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" />
+        <Label fx:id="contadorSms" layoutX="210.0" layoutY="330.0"
+               style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" />
 
-        <ImageView fx:id="iconoEmail" fitHeight="60.0" fitWidth="80.0" layoutX="61.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="iconoEmail" fitHeight="60.0" fitWidth="80.0" layoutX="61.0" layoutY="330.0"
+                   pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../emailpng.png" />
             </image>
         </ImageView>
-        <Label fx:id="contadorEmail" layoutX="87.0" layoutY="330.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" />
+        <Label fx:id="contadorEmail" layoutX="87.0" layoutY="330.0"
+               style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 12px;" text="0" />
 
 
-        <Button fx:id="verEmailBoton" layoutX="52.0" layoutY="400.0" onAction="#onEmailClick" text="Ver Email" />
-        <Button fx:id="verSMSboton" layoutX="181.0" layoutY="400.0" onAction="#onSMSClick" text="Ver SMS" />
+        <Button layoutX="52.0" layoutY="400.0" onAction="#onEmailClick" text="Ver Email" />
+        <Button layoutX="181.0" layoutY="400.0" onAction="#onSMSClick" text="Ver SMS" />
 
 
-        <Button fx:id="btnCerrarSesion" layoutX="100.0" layoutY="450.0" onAction="#onCerrarSesionClick" prefWidth="100.0" text="Cerrar Sesión" />
+        <Button fx:id="btnCerrarSesion" layoutX="100.0" layoutY="450.0"
+                onAction="#onCerrarSesionClick" prefWidth="100.0" text="Cerrar Sesión" />
 
     </children>
 </AnchorPane>
