@@ -30,16 +30,22 @@
         </TableView>
 
         <Button fx:id="btnSuscribirse"
-                layoutX="150.0" layoutY="310.0"
+                layoutX="70.0" layoutY="310.0"
                 prefWidth="120.0"
                 text="Suscribirse"
                 onAction="#onSuscribirseClick" />
 
         <Button fx:id="btnDesuscribirse"
-                layoutX="310.0" layoutY="310.0"
+                layoutX="400.0" layoutY="310.0"
                 prefWidth="120.0"
                 text="Desuscribirse"
                 onAction="#onDesuscribirseClick" />
+
+        <Button fx:id="btnvolver"
+                layoutX="273.0" layoutY="359.0"
+                mnemonicParsing="false"
+                onAction="#onVolver" text="Volver" />
+
 
     </children>
 </AnchorPane>

@@ -36,4 +36,5 @@
     </HBox>
 
     <Button fx:id="btnEnviar" text="Enviar Notificación" onAction="#onEnviarNotificacion"/>
+    <Button fx:id="btn_Volver" mnemonicParsing="false" onAction="#onVolver" text="Volver" />
 </VBox>

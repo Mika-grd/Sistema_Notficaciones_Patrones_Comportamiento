@@ -22,7 +22,6 @@
             <columns>
                 <TableColumn fx:id="columnaNombreUsuario" text="Usuario" prefWidth="120.0" />
                 <TableColumn fx:id="columnaMensaje" text="Mensaje" prefWidth="300.0" />
-                <!-- Si quieres columna de estado, crea también columnaEstado en el controlador -->
                 <TableColumn fx:id="columnaEstado" text="Estado" prefWidth="120.0" />
             </columns>
         </TableView>
@@ -39,6 +38,12 @@
                 prefWidth="120.0"
                 text="Marcar como Leído"
                 onAction="#onMarcarLeidoClick" />
+
+        <Button fx:id="btnVolver"
+                layoutX="273.0" layoutY="357.0"
+                mnemonicParsing="false"
+                onAction="#onVolver"
+                text="Volver" />
 
     </children>
 

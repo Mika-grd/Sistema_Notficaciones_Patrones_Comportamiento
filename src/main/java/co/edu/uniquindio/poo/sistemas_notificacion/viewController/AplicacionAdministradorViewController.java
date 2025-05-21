@@ -140,7 +140,7 @@ public class AplicacionAdministradorViewController {
     void onGestionEventosClick(ActionEvent event) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/admin/CRUD_eventos.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/admin/GestionarSuscripcionesAdmin.fxml"));
             Scene newScene = new Scene(loader.load());
 
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

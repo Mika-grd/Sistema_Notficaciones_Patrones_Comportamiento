@@ -5,11 +5,17 @@ import co.edu.uniquindio.poo.sistemas_notificacion.model.Cliente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableRow;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ClienteEmailViewController {
 
@@ -30,6 +36,9 @@ public class ClienteEmailViewController {
 
     @FXML
     private Button btnEliminar;
+
+    @FXML
+    private Button btnVolver;
 
     @FXML
     private Button btnMarcarLeida;
@@ -112,11 +121,30 @@ public class ClienteEmailViewController {
     }
 
     // Métodos para los botones que mencionas:
+    @FXML
     public void onEliminarClick(ActionEvent actionEvent) {
         eliminarNotificacion();
     }
 
+    @FXML
     public void onMarcarLeidoClick(ActionEvent actionEvent) {
         marcarLeida();
     }
+
+    @FXML
+    public void onVolver(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/sistemas_notificacion/Aplications/cliente/AplicacionCliente.fxml"));
+            Scene newScene = new Scene(loader.load());
+
+            Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            currentStage.setScene(newScene);
+            currentStage.setTitle("Login");
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar la nueva ventana: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 }
